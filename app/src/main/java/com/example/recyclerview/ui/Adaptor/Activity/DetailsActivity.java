@@ -39,6 +39,12 @@ public class DetailsActivity extends AppCompatActivity {
         countryLanguage= bundle.getString(Const.COUNTRY_LANGUAGE_KEY);
         countryPopulation= bundle.getString(Const.COUNTRY_POPULATION_KEY);
         countryCurrency=bundle.getString(Const.COUNTRY_CURRENCY_KEY);
+        Glide.with(this)
+                .load(countryImageUrl)
+                .centerCrop()
+                .placeholder(R.drawable.ic_launcher_background)
+                .into(binding.countryFlag);
+
 
         binding.textviewCountryName.setText("Country name: "+ countryName);
         binding.textviewCountryPupulation.setText("Country Language: "+countryPopulation);
